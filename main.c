@@ -11,35 +11,64 @@
 	
 #define PORT	 8080
 #define MAXLINE 1024
+#define INITCHIPS 10
 
 int PORTS[] = {8080, 8081, 8082, 8083};
 
+typedef struct player_t
+{
+  int playerID;
+  int nxtPlayerID;
+
+  int totalChips;
+  int betValue;
+  int betType;
+
+} player_t ;
+
+
 int get_player_id(int argc, char ** argv){
-  int id;
   int option;
+  opterr = 0;
+  optind = 1;
+
+  int id;
   while ((option = getopt (argc, argv, "i:")) != -1){
 		switch (option)
 		{
 			case 'i':
-            	id = atoi(optarg);
-            	break;
+        id = atoi(optarg);
+        break;
 			default:
-				break;
+        fprintf(stderr, "Usage: -i [player id]\n");
+				exit(-1);
 		}
 	}
 
   return id;
 }
 
-// Driver code
-int main(int argc, char ** argv) {
-  // Configurações da máquina
-  int playerId = get_player_id(argc, argv);
-  int nextPlayerId = playerId == 3 ? 0 : playerId + 1;
+void initialize_player(player_t player, int playerId){
+  
+  player.playerID = playerId;
+  player.nxtPlayerID = playerId == 3 ? 0 : playerId + 1;
   // int previousPlayerId = playerId == 3 ? 0 : playerId + 1;
 
+  player.totalChips = INITCHIPS;
+  player.betValue = 0;
+  player.betType = NULL;
+}
+
+
+// Driver code
+int main(int argc, char ** argv) { 
+  // Configurações da máquina
+  player_t player;
+  int playerId = get_player_id(argc, argv);
+  initialize_player(player, playerId);
+
   int port = PORTS[playerId];
-  int next_port = PORTS[nextPlayerId];
+  int next_port = PORTS[player.nxtPlayerID];
   // int next_port = PORTS[nextPlayerId];
 
   // Inicia
@@ -76,6 +105,9 @@ int main(int argc, char ** argv) {
 	int len, n;
 	
 	len = sizeof(prevaddr); //len is value/result
+
+
+  initialize_player
   
   int cicle = 0;	
   while(1){
