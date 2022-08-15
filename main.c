@@ -106,8 +106,8 @@ int main(int argc, char ** argv) {
 	
 	len = sizeof(prevaddr); //len is value/result
 
-
-  initialize_player
+  player_t player;
+  initialize_player(player, playerId);
   
   int cicle = 0;	
   while(1){
