@@ -38,7 +38,7 @@ message_t *convertStrToMsg(char *buffer, int size){
     printf("Recebido: %d\n", size);
 
     for(int i = 0; i < size; i++){
-        printf("%x |", buffer[i]);
+        printf("%d |", buffer[i]);
     }
     printf("\n");
 
@@ -54,11 +54,11 @@ message_t *convertStrToMsg(char *buffer, int size){
         return NULL;
     }
 
-    msg->origin = (int) buffer[2];
+    msg->origin = (int) buffer[2] - 48;
 
-    msg->bet_type = (int) buffer[3];
-    msg->bet = (int) buffer[4];
-    msg->result = (int) buffer[5];
+    msg->bet_type = (int) buffer[3] - 48;
+    msg->bet = (int) buffer[4] - 48;
+    msg->result = (int) buffer[5] - 48;
 
     char erro = '0';
     for(int i = 3; i < (size-1); i++){
@@ -90,13 +90,14 @@ int sendMessage(game_socket_t *g_socket, message_t *msg){
         perror("Não foi possível alocar espaço para o buffer\n");
         return -1;
     }
+
     int size = convertMsgToStr(msg, buffer);
     if(size < 0){
         return -1;
     }
 
     for(int i = 0; i < size; i++){
-        printf("%x |", buffer[i]);
+        printf("%d |", buffer[i]);
     }
     printf("\n");
 

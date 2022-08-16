@@ -34,7 +34,7 @@ int main(int argc, char ** argv) {
   while(1){
     if(playerId > 0 || (playerId == 0 && cicle > 0)){
       message_t *msg = receiveMessage(g_socket);
-//      printMessage(msg);
+      printMessage(msg);
       printf("Recebido: %d\n", msg->bet);
       cicle = msg->bet;
     }
