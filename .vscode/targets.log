@@ -1,0 +1,362 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.3
+# Built for x86_64-redhat-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Tue Aug 16 19:06:31 2022
+
+# Variables
+
+# environment
+GDK_BACKEND = x11
+# environment
+LC_ALL = C
+# environment
+NO_AT_BRIDGE = 1
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# environment
+VSCODE_CWD = /home/gustavo
+# environment
+GDM_LANG = pt_BR.UTF-8
+# default
+MAKE_COMMAND := make
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /home/gustavo/Documentos/UFPR/Redes1/Yahtzee-em-Anel
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+HOSTNAME = fedora
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+MAIL = /var/spool/mail/gustavo
+# environment
+XDG_DATA_DIRS = /home/gustavo/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/
+# environment
+OLDPWD = /home/gustavo
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = /home/gustavo/.config/Code/CachedData/6d9b74a70ca9c7733b29f0456fd8195364076dda
+# environment
+LANG = C
+# environment
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.GHZ1Q1
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# makefile
+MAKEFLAGS = pqrR
+# makefile
+CURDIR := /home/gustavo/Documentos/UFPR/Redes1/Yahtzee-em-Anel
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+LESSOPEN = ||/usr/bin/lesspipe.sh %s
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+MFLAGS = -pqrR
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# default
+.SHELLFLAGS := -c
+# environment
+WAYLAND_DISPLAY = wayland-0
+# environment
+HISTSIZE = 50000
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+P9K_SSH = 0
+# environment
+XDG_SESSION_DESKTOP = gnome
+# makefile (from 'makefile', line 1)
+MAKEFILE_LIST := makefile
+# automatic
+@F = $(notdir $@)
+# environment
+ZSH = /home/gustavo/.oh-my-zsh
+# environment
+VSCODE_PID = 2991
+# environment
+XDG_SESSION_TYPE = wayland
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+SESSION_MANAGER = local/unix:@/tmp/.ICE-unix/1688,unix/unix:/tmp/.ICE-unix/1688
+# automatic
+*F = $(notdir $*)
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{},"_languagePackSupport":true}
+# default
+MAKE_HOST := x86_64-redhat-linux-gnu
+# makefile
+SHELL = /bin/sh
+# default
+MAKECMDGOALS := all
+# environment
+XMODIFIERS = @im=ibus
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# environment
+SHLVL = 0
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = /usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/home/gustavo/bin:/home/gustavo/bin
+# environment
+MOZ_GMP_PATH = /usr/lib64/mozilla/plugins/gmp-gmpopenh264/system-installed
+# default
+MAKEFILES := 
+# automatic
+^F = $(notdir $^)
+# environment
+INVOCATION_ID = e8e507154837462f9bc4ca79aec1c087
+# environment
+USERNAME = gustavo
+# environment
+GNOME_SETUP_DISPLAY = :1
+# automatic
+?F = $(notdir $?)
+# environment
+XDG_CURRENT_DESKTOP = GNOME
+# environment
+KDEDIRS = /usr
+# environment
+LS_COLORS = 
+# automatic
++F = $(notdir $+)
+# environment
+LESS = -R
+# environment
+DESKTOP_SESSION = gnome
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = GNOME
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+LOGNAME = gustavo
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
+# makefile
+.DEFAULT_GOAL := all
+# environment
+SYSTEMD_EXEC_PID = 1718
+# environment
+HISTCONTROL = ignoredups
+# environment
+EDITOR = /usr/bin/nano
+# environment
+DISPLAY = :0
+# environment
+USER = gustavo
+# default
+MAKE_VERSION := 4.3
+# makefile (from 'makefile', line 2)
+LDFLAGS = -lm
+# environment
+MANAGERPID = 1580
+# environment
+which_declare = typeset -f
+# environment
+DEBUGINFOD_URLS = https://debuginfod.fedoraproject.org/ 
+# environment
+NODE_TLS_REJECT_UNAUTHORIZED = 0
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2991
+# environment
+PAGER = less
+# environment
+_ = /usr/bin/make
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# makefile (from 'makefile', line 1)
+CFLAGS = -g
+# environment
+JOURNAL_STREAM = 8:35032
+# environment
+XDG_SESSION_CLASS = user
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/gustavo
+# environment
+QT_IM_MODULE = ibus
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-8f6c2e77-1.70.1-main.sock
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# default
+SUFFIXES := 
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+GDMSESSION = gnome
+# variable set hash-table stats:
+# Load=105/1024=10%, Rehash=0, Collisions=5/135=4%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 41, inode 1787087): 16 files, no impossibilities.
+
+# 16 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+# No implicit rules.
+
+# Files
+
+game: main.o messages.o game.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-08-16 19:05:40.634347498
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 7):
+	gcc -o game main.o messages.o game.o $(CFLAGS) $(LDFLAGS)
+
+messages.o: messages.c messages.h
+#  Implicit rule search has not been done.
+#  Last modified 2022-08-16 19:05:40.61634759
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 16):
+	gcc -c messages.c $(CFLAGS)
+
+# Not a target:
+messages.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-16 19:04:08.080821395
+#  File has been updated.
+#  Successfully updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 19):
+	-rm -f *~ *.o
+	
+
+# Not a target:
+game.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-16 10:51:45.91647506
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+game.c:
+ 
+#  Implicit rule search has been done.
+#  Last modified 2022-08-16 10:48:49.054720669
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: game
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+messages.h:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-16 18:54:45.473702095
+#  File has been updated.
+#  Successfully updated.
+
+purge: clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+ 
+#  recipe to execute (from 'makefile', line 22):
+	-rm -f game
+
+# Not a target:
+main.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-16 19:04:57.129570251
+#  File has been updated.
+#  Successfully updated.
+
+main.o: main.c messages.h game.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-08-16 19:05:40.585347749
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 10):
+	gcc -c main.c -o main.o $(CFLAGS)
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-16 19:05:21.21444693
+#  File has been updated.
+#  Successfully updated.
+
+game.o: game.c game.h
+#  Implicit rule search has not been done.
+#  Last modified 2022-08-16 19:05:40.556347897
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 13):
+	gcc -c game.c $(CFLAGS)
+
+# files hash-table stats:
+# Load=15/1024=1%, Rehash=0, Collisions=0/42=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 23 / storage = 188 B / avg = 8 B
+# current buf: size = 8162 B / used = 188 B / count = 23 / avg = 8 B
+
+# strcache performance: lookups = 51 / hit rate = 54%
+# hash-table stats:
+# Load=23/8192=0%, Rehash=0, Collisions=0/51=0%
+# Finished Make data base on Tue Aug 16 19:06:31 2022
+
+ 

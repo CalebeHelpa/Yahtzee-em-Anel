@@ -9,7 +9,7 @@ Detecção de erros > Paridade horizontal
 
 Marcador inicial | Tipo | Sequencia | Origem |  Dados origem | Rival | Dados rival | Erros |
 
-Marcador inicial | Tipo | Sequencia | Tipo Aposta | Aposta | Resultado | Erros |
+Marcador inicial | Tipo | Origem | Tipo Aposta | Aposta | Resultado | Erros |
   1byte            1byte    1byte                                        1byte
 
 -> A -> B -> C -> D ->
