@@ -1,5 +1,8 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/gustavo/Documentos/UFPR/Redes1/Yahtzee-em-Anel'
-make: Nothing to be done for 'all'.
+gcc -c game.c -g
+gcc -c main.c -o main.o -g
+gcc -c messages.c -g
+gcc -o game main.o messages.o game.o -g -lm
 make: Leaving directory '/home/gustavo/Documentos/UFPR/Redes1/Yahtzee-em-Anel'
  

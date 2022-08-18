@@ -73,7 +73,7 @@ message_t *convertStrToMsg(char *buffer, int size){
     return msg;
 }
 
-/*********** MENSSAGEM ***********/
+/*********** MENSAGEM ***********/
 message_t *receiveMessage(game_socket_t *g_socket){
     char buffer[MAXLINE];
     int len = sizeof(g_socket->prevaddr);
@@ -106,6 +106,34 @@ int sendMessage(game_socket_t *g_socket, message_t *msg){
     // Envia mensagem
     sendto(g_socket->sockfd, (const char *)buffer, size, MSG_CONFIRM, (const struct sockaddr *) &(g_socket->nextaddr), sizeof(g_socket->nextaddr));
     return 1;
+}
+
+/*********** BASTAO ***********/
+void passBaton(game_socket_t *g_socket){
+    // Envia mensagem para o próximo com o bastão
+    message_t *msg = create_message(g_socket->myPort, TYPE_BATON);
+    msg->result = 0;
+    sendMessage(g_socket, msg);
+
+    // Espera confirmação
+    message_t *result = receiveMessage(g_socket);
+    
+    // Seta bastão como 0 se a resposta for valida
+    if(result != NULL && result->result == 1){
+        g_socket->baton = 0;
+    }
+}
+
+void receiveBaton(game_socket_t *g_socket, message_t *msg){
+    // Verifica se o bastao é pra ele
+    // Se for seta o valor
+    if(msg->result == 0){
+        g_socket->baton = 1;
+        msg->result = 1;
+    }
+
+    // Passa a mensagem
+    sendMessage(g_socket, msg);
 }
 
 message_t* create_message (int origin, char type) {
@@ -161,6 +189,13 @@ game_socket_t* create_game_socket (int myPort, int nxtPort){
     g_socket->nextaddr.sin_family = AF_INET; 
     g_socket->nextaddr.sin_port = htons(nxtPort); 
     g_socket->nextaddr.sin_addr.s_addr = INADDR_ANY;
+
+    // Seta o bastao para o primeiro jogador
+    if(myPort == GAME_PORTS[0]){
+        g_socket->baton = 1;
+    } else {
+        g_socket->baton = 0;
+    }
 
     return g_socket;
 }

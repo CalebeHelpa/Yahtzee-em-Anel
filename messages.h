@@ -59,6 +59,8 @@ int getPort(int id);
 
 message_t* create_message (int origin, char type);
 
-void passBaton();
+void passBaton(game_socket_t *g_socket);
+
+void receiveBaton(game_socket_t *g_socket, message_t *msg);
 
 #endif

@@ -7,8 +7,6 @@ Mensagens:
 Sequencialização > 
 Detecção de erros > Paridade horizontal
 
-Marcador inicial | Tipo | Sequencia | Origem |  Dados origem | Rival | Dados rival | Erros |
-
 Marcador inicial | Tipo | Origem | Tipo Aposta | Aposta | Resultado | Erros |
   1byte            1byte    1byte                                        1byte
 

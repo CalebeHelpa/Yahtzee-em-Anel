@@ -34,9 +34,19 @@ int main(int argc, char ** argv) {
   while(1){
     if(playerId > 0 || (playerId == 0 && cicle > 0)){
       message_t *msg = receiveMessage(g_socket);
-      printMessage(msg);
-      printf("Recebido: %d\n", msg->bet);
-      cicle = msg->bet;
+      if(msg->type == TYPE_BATON){
+        receiveBaton(g_socket, msg);
+        if(g_socket->baton == 1)
+          printf("Bastão recebido !\n");
+      } else {
+        // printMessage(msg);
+        printf("Recebido: %d\n", msg->bet);
+        cicle = msg->bet;
+        if(g_socket->baton == 1){
+          printf("Passando bastao \n");
+          passBaton(g_socket);
+        }
+      }
     }
 
     cicle++;

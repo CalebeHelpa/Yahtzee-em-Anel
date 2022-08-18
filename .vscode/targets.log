@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Aug 16 19:06:31 2022
+# Make data base, printed on Wed Aug 17 23:49:01 2022
 
 # Variables
 
@@ -53,7 +53,7 @@ VSCODE_CODE_CACHE_PATH = /home/gustavo/.config/Code/CachedData/6d9b74a70ca9c7733
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.GHZ1Q1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.USR5Q1
 # default
 .LOADED := 
 # default
@@ -91,13 +91,13 @@ MAKEFILE_LIST := makefile
 # environment
 ZSH = /home/gustavo/.oh-my-zsh
 # environment
-VSCODE_PID = 2991
+VSCODE_PID = 13772
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/unix:@/tmp/.ICE-unix/1688,unix/unix:/tmp/.ICE-unix/1688
+SESSION_MANAGER = local/unix:@/tmp/.ICE-unix/1687,unix/unix:/tmp/.ICE-unix/1687
 # automatic
 *F = $(notdir $*)
 # environment
@@ -133,7 +133,7 @@ MAKEFILES :=
 # automatic
 ^F = $(notdir $^)
 # environment
-INVOCATION_ID = e8e507154837462f9bc4ca79aec1c087
+INVOCATION_ID = 18acbdb6a87645fcafe178e4258860c1
 # environment
 USERNAME = gustavo
 # environment
@@ -163,7 +163,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 1718
+SYSTEMD_EXEC_PID = 1722
 # environment
 HISTCONTROL = ignoredups
 # environment
@@ -177,15 +177,13 @@ MAKE_VERSION := 4.3
 # makefile (from 'makefile', line 2)
 LDFLAGS = -lm
 # environment
-MANAGERPID = 1580
+MANAGERPID = 1586
 # environment
 which_declare = typeset -f
 # environment
 DEBUGINFOD_URLS = https://debuginfod.fedoraproject.org/ 
 # environment
-NODE_TLS_REJECT_UNAUTHORIZED = 0
-# environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2991
+GIO_LAUNCHED_DESKTOP_FILE_PID = 13772
 # environment
 PAGER = less
 # environment
@@ -195,7 +193,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 # makefile (from 'makefile', line 1)
 CFLAGS = -g
 # environment
-JOURNAL_STREAM = 8:35032
+JOURNAL_STREAM = 8:31355
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -221,7 +219,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 GDMSESSION = gnome
 # variable set hash-table stats:
-# Load=105/1024=10%, Rehash=0, Collisions=5/135=4%
+# Load=104/1024=10%, Rehash=0, Collisions=5/134=4%
 
 # Pattern-specific Variable Values
 
@@ -241,7 +239,7 @@ GDMSESSION = gnome
 
 game: main.o messages.o game.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-16 19:05:40.634347498
+#  Last modified 2022-08-16 19:16:44.520948215
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 7):
@@ -249,7 +247,7 @@ game: main.o messages.o game.o
 
 messages.o: messages.c messages.h
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-16 19:05:40.61634759
+#  Last modified 2022-08-16 19:16:44.500948317
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 16):
@@ -258,7 +256,7 @@ messages.o: messages.c messages.h
 # Not a target:
 messages.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-16 19:04:08.080821395
+#  Last modified 2022-08-16 19:16:41.065965905
 #  File has been updated.
 #  Successfully updated.
 
@@ -279,9 +277,9 @@ game.h:
 
 # Not a target:
 game.c:
- 
 #  Implicit rule search has been done.
 #  Last modified 2022-08-16 10:48:49.054720669
+ 
 #  File has been updated.
 #  Successfully updated.
 
@@ -309,20 +307,19 @@ purge: clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 #  recipe to execute (from 'makefile', line 22):
 	-rm -f game
 
 # Not a target:
 main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-16 19:04:57.129570251
+#  Last modified 2022-08-16 19:10:28.026875969
 #  File has been updated.
 #  Successfully updated.
 
 main.o: main.c messages.h game.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-16 19:05:40.585347749
+#  Last modified 2022-08-16 19:12:15.627325023
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'makefile', line 10):
@@ -357,6 +354,6 @@ game.o: game.c game.h
 # strcache performance: lookups = 51 / hit rate = 54%
 # hash-table stats:
 # Load=23/8192=0%, Rehash=0, Collisions=0/51=0%
-# Finished Make data base on Tue Aug 16 19:06:31 2022
+# Finished Make data base on Wed Aug 17 23:49:01 2022
 
  
