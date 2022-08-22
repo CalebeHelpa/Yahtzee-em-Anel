@@ -20,10 +20,14 @@ int read_options(int argc, char ** argv);
 
 int main(int argc, char ** argv) { 
   // Configurações da máquina
+
+
   player_t player;
   int playerId = read_options(argc, argv);
   initialize_player(&player, playerId);
 
+  define_betType(&player);
+  define_betValue(&player, 8, 7);
   
   game_socket_t *g_socket;
   g_socket = create_game_socket(getPort(player.playerID), getPort(player.nxtPlayerID));

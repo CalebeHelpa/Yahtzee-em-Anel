@@ -1,225 +1,286 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-# GNU Make 4.3
-# Built for x86_64-redhat-linux-gnu
-# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Aug 17 23:49:01 2022
+# Make data base, printed on Sun Aug 21 18:35:09 2022
 
 # Variables
 
-# environment
-GDK_BACKEND = x11
-# environment
-LC_ALL = C
-# environment
-NO_AT_BRIDGE = 1
-# environment
-GJS_DEBUG_OUTPUT = stderr
-# environment
-VSCODE_CWD = /home/gustavo
-# environment
-GDM_LANG = pt_BR.UTF-8
-# default
-MAKE_COMMAND := make
-# automatic
-@D = $(patsubst %/,%,$(dir $@))
-# environment
-VSCODE_HANDLES_UNCAUGHT_ERRORS = true
-# default
-.VARIABLES := 
-# environment
-PWD = /home/gustavo/Documentos/UFPR/Redes1/Yahtzee-em-Anel
-# automatic
-%D = $(patsubst %/,%,$(dir $%))
-# environment
-HOSTNAME = fedora
-# environment
-LSCOLORS = Gxfxcxdxbxegedabagacad
-# environment
-MAIL = /var/spool/mail/gustavo
-# environment
-XDG_DATA_DIRS = /home/gustavo/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/
-# environment
-OLDPWD = /home/gustavo
-# automatic
-^D = $(patsubst %/,%,$(dir $^))
-# automatic
-%F = $(notdir $%)
-# environment
-VSCODE_CODE_CACHE_PATH = /home/gustavo/.config/Code/CachedData/6d9b74a70ca9c7733b29f0456fd8195364076dda
-# environment
-LANG = C
-# environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.USR5Q1
-# default
-.LOADED := 
-# default
-.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
-# makefile
-MAKEFLAGS = pqrR
-# makefile
-CURDIR := /home/gustavo/Documentos/UFPR/Redes1/Yahtzee-em-Anel
-# environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
-# environment
-LESSOPEN = ||/usr/bin/lesspipe.sh %s
-# automatic
-*D = $(patsubst %/,%,$(dir $*))
-# environment
-MFLAGS = -pqrR
-# environment
-SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
-# default
-.SHELLFLAGS := -c
-# environment
-WAYLAND_DISPLAY = wayland-0
-# environment
-HISTSIZE = 50000
-# automatic
-+D = $(patsubst %/,%,$(dir $+))
-# environment
-P9K_SSH = 0
-# environment
-XDG_SESSION_DESKTOP = gnome
-# makefile (from 'makefile', line 1)
-MAKEFILE_LIST := makefile
-# automatic
-@F = $(notdir $@)
-# environment
-ZSH = /home/gustavo/.oh-my-zsh
-# environment
-VSCODE_PID = 13772
-# environment
-XDG_SESSION_TYPE = wayland
-# automatic
-?D = $(patsubst %/,%,$(dir $?))
-# environment
-SESSION_MANAGER = local/unix:@/tmp/.ICE-unix/1687,unix/unix:/tmp/.ICE-unix/1687
-# automatic
-*F = $(notdir $*)
-# environment
-CHROME_DESKTOP = code-url-handler.desktop
-# environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# 'override' directive
+GNUMAKEFLAGS := 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
-# environment
-VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{},"_languagePackSupport":true}
-# default
-MAKE_HOST := x86_64-redhat-linux-gnu
-# makefile
-SHELL = /bin/sh
-# default
-MAKECMDGOALS := all
-# environment
-XMODIFIERS = @im=ibus
-# environment
-GJS_DEBUG_TOPICS = JS ERROR;JS LOG
-# environment
-SHLVL = 0
-# environment
-MAKELEVEL := 0
-# default
-MAKE = $(MAKE_COMMAND)
-# environment
-PATH = /usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/home/gustavo/bin:/home/gustavo/bin
-# environment
-MOZ_GMP_PATH = /usr/lib64/mozilla/plugins/gmp-gmpopenh264/system-installed
-# default
-MAKEFILES := 
-# automatic
-^F = $(notdir $^)
-# environment
-INVOCATION_ID = 18acbdb6a87645fcafe178e4258860c1
-# environment
-USERNAME = gustavo
-# environment
-GNOME_SETUP_DISPLAY = :1
 # automatic
 ?F = $(notdir $?)
 # environment
-XDG_CURRENT_DESKTOP = GNOME
-# environment
-KDEDIRS = /usr
-# environment
-LS_COLORS = 
-# automatic
-+F = $(notdir $+)
-# environment
-LESS = -R
-# environment
-DESKTOP_SESSION = gnome
-# environment
-ORIGINAL_XDG_CURRENT_DESKTOP = GNOME
-# 'override' directive
-GNUMAKEFLAGS := 
-# environment
-LOGNAME = gustavo
-# environment
-GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
-# makefile
-.DEFAULT_GOAL := all
-# environment
-SYSTEMD_EXEC_PID = 1722
-# environment
-HISTCONTROL = ignoredups
-# environment
-EDITOR = /usr/bin/nano
-# environment
-DISPLAY = :0
-# environment
-USER = gustavo
+DESKTOP_SESSION = ubuntu
 # default
-MAKE_VERSION := 4.3
-# makefile (from 'makefile', line 2)
-LDFLAGS = -lm
+.SHELLFLAGS := -c
 # environment
-MANAGERPID = 1586
-# environment
-which_declare = typeset -f
-# environment
-DEBUGINFOD_URLS = https://debuginfod.fedoraproject.org/ 
-# environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 13772
-# environment
-PAGER = less
-# environment
-_ = /usr/bin/make
-# environment
-XDG_RUNTIME_DIR = /run/user/1000
-# makefile (from 'makefile', line 1)
-CFLAGS = -g
-# environment
-JOURNAL_STREAM = 8:31355
+LIKWID_INCLUDE = /usr/local/include
 # environment
 XDG_SESSION_CLASS = user
 # environment
-VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+SNAP_COMMON = /var/snap/code/common
 # environment
-HOME = /home/gustavo
+XDG_SESSION_TYPE = x11
+# environment
+NVM_INC = /home/calebe/.nvm/versions/node/v12.22.12/include/node
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+PLATFORMIO_IDE = 2.5.2
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+XAUTHORITY = /run/user/1000/gdm/Xauthority
+# environment
+GDMSESSION = ubuntu
+# environment
+XMODIFIERS = @im=ibus
+# makefile
+CURDIR := /home/calebe/Documentos/RedesI/Yahtzee-em-Anel
+# makefile
+SHELL = /bin/sh
+# environment
+SNAP_DATA = /var/snap/code/104
+# environment
+VTE_VERSION = 6003
+# environment
+VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"89ebf7d0bb12d1282a52b02d65044dbc.pt-br","_translationsConfigFile":"/home/calebe/.config/Code/clp/89ebf7d0bb12d1282a52b02d65044dbc.pt-br/tcf.json","_cacheRoot":"/home/calebe/.config/Code/clp/89ebf7d0bb12d1282a52b02d65044dbc.pt-br","_resolvedLanguagePackCoreLocation":"/home/calebe/.config/Code/clp/89ebf7d0bb12d1282a52b02d65044dbc.pt-br/6d9b74a70ca9c7733b29f0456fd8195364076dda","_corruptedFile":"/home/calebe/.config/Code/clp/89ebf7d0bb12d1282a52b02d65044dbc.pt-br/corrupted.info","_languagePackSupport":true}
+# environment
+JOURNAL_STREAM = 8:52667
+# makefile (from 'makefile', line 1)
+CFLAGS = -g
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# environment
+SNAP_INSTANCE_NAME = code
+# environment
+SNAP_ARCH = amd64
+# makefile (from 'makefile', line 1)
+MAKEFILE_LIST :=  makefile
+# automatic
+@F = $(notdir $@)
+# environment
+IM_CONFIG_PHASE = 1
 # environment
 QT_IM_MODULE = ibus
 # environment
-ELECTRON_RUN_AS_NODE = 1
+USERNAME = calebe
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-8f6c2e77-1.70.1-main.sock
+XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# environment
+MANAGERPID = 1870
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# environment
+VSCODE_CWD = /home/calebe/Documentos/RedesI/Yahtzee-em-Anel
+# environment
+GSETTINGS_SCHEMA_DIR = /snap/code/104/usr/share/glib-2.0/schemas
+# environment
+LIKWID_HOME = /usr/local
 # default
-.RECIPEPREFIX := 
-# automatic
-<F = $(notdir $<)
-# default
-SUFFIXES := 
-# default
-.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+NO_PROXY = 127.0.0.1
+# environment
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# environment
+SESSION_MANAGER = local/multivac:@/tmp/.ICE-unix/2098,unix/multivac:/tmp/.ICE-unix/2098
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# environment
+GDK_PIXBUF_MODULE_FILE = /home/calebe/snap/code/common/.cache/gdk-pixbuf-loaders.cache
+# environment
+SNAP = /snap/code/104
+# environment
+NVM_BIN = /home/calebe/.nvm/versions/node/v12.22.12/bin
+# environment
+SNAP_VERSION = 6d9b74a7
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
-GDMSESSION = gnome
+DISABLE_WAYLAND = 1
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+INVOCATION_ID = 8b4fd9dcdfee4223b37779d80eaedd3d
+# makefile (from 'makefile', line 2)
+LDFLAGS = -lm
+# environment
+GDK_PIXBUF_MODULEDIR = /snap/code/104/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+LIKWID_LIB = /usr/local/lib
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4288
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# environment
+LIKWID_MAN = /usr/local/man
+# environment
+SNAP_INSTANCE_KEY = 
+# environment
+PWD = /home/calebe/Documentos/RedesI/Yahtzee-em-Anel
+# default
+.LOADED := 
+# environment
+SSH_AGENT_PID = 2060
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# environment
+GTK_MODULES = gail:atk-bridge
+# environment
+MANPATH = /home/calebe/.nvm/versions/node/v12.22.12/share/man::/usr/local/man
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/calebe
+# environment
+LD_LIBRARY_PATH = :/usr/local/lib
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# environment
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /home/calebe/.config/Code/CachedData/6d9b74a70ca9c7733b29f0456fd8195364076dda
+# environment
+LOGNAME = calebe
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
+# environment
+SNAP_CONTEXT = ZXt1WGWfcX02fhikQMIrGZbYGnsxBUcvpYVBvD9CRrzD0g0w5yi3
+# environment
+NVM_CD_FLAGS = 
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+SNAP_USER_COMMON = /home/calebe/snap/code/common
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 0
+# environment
+SNAP_REAL_HOME = /home/calebe
+# environment
+PLATFORMIO_PATH = /home/calebe/.platformio/penv/bin:/home/calebe/.platformio/penv:/home/calebe/.platformio/python3/bin:/home/calebe/.nvm/versions/node/v12.22.12/bin:/home/calebe/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/bin:/usr/local/sbin
+# environment
+COLORTERM = truecolor
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+PATH = /home/calebe/.nvm/versions/node/v12.22.12/bin:/home/calebe/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/bin:/usr/local/sbin
+# environment
+SNAP_USER_DATA = /home/calebe/snap/code/104
+# environment
+SHLVL = 1
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = calebe
+# environment
+SNAP_REVISION = 104
+# makefile
+.DEFAULT_GOAL := all
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := make
+# environment
+OLDPWD = /home/calebe
+# environment
+TERMINATOR_DBUS_PATH = /net/tenshu/Terminator2
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+LANGUAGE = pt_BR:pt:en
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-b341361d-1.70.1-main.sock
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+NVM_DIR = /home/calebe/.nvm
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+GDK_BACKEND = x11
+# automatic
++F = $(notdir $+)
+# environment
+QT_ACCESSIBILITY = 1
+# default
+MAKEFILES := 
+# environment
+SNAP_COOKIE = ZXt1WGWfcX02fhikQMIrGZbYGnsxBUcvpYVBvD9CRrzD0g0w5yi3
+# automatic
+<F = $(notdir $<)
+# environment
+PLATFORMIO_CALLER = vscode
+# environment
+SNAP_NAME = code
+# environment
+LC_ALL = C
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+SNAP_REEXEC = 
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+WINDOWPATH = 2
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# default
+.RECIPEPREFIX := 
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# environment
+TERMINATOR_DBUS_NAME = net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873
+# environment
+VSCODE_PID = 4614
+# environment
+TERMINATOR_UUID = urn:uuid:04106705-b103-4eda-b375-3725b07f2bf6
 # variable set hash-table stats:
-# Load=104/1024=10%, Rehash=0, Collisions=5/134=4%
+ 
+# Load=134/1024=13%, Rehash=0, Collisions=19/163=12%
 
 # Pattern-specific Variable Values
 
@@ -227,9 +288,9 @@ GDMSESSION = gnome
 
 # Directories
 
-# . (device 41, inode 1787087): 16 files, no impossibilities.
+# . (device 2052, inode 2203964): 12 files, no impossibilities.
 
-# 16 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -237,69 +298,53 @@ GDMSESSION = gnome
 
 # Files
 
-game: main.o messages.o game.o
-#  Implicit rule search has not been done.
-#  Last modified 2022-08-16 19:16:44.520948215
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 7):
-	gcc -o game main.o messages.o game.o $(CFLAGS) $(LDFLAGS)
-
-messages.o: messages.c messages.h
-#  Implicit rule search has not been done.
-#  Last modified 2022-08-16 19:16:44.500948317
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 16):
-	gcc -c messages.c $(CFLAGS)
-
 # Not a target:
-messages.c:
+messages.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-16 19:16:41.065965905
-#  File has been updated.
-#  Successfully updated.
-
-clean:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 19):
-	-rm -f *~ *.o
-	
-
-# Not a target:
-game.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-16 10:51:45.91647506
+#  Last modified 2022-08-18 16:36:58.738904018
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 game.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-16 10:48:49.054720669
- 
+#  Last modified 2022-08-18 16:36:58.738904018
 #  File has been updated.
 #  Successfully updated.
-
-# Not a target:
-.DEFAULT:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
 
 all: game
 #  Command line target.
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
+
+# Not a target:
+main.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-18 16:36:58.738904018
+#  File has been updated.
 #  Successfully updated.
 
 # Not a target:
-messages.h:
+game.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-16 18:54:45.473702095
+#  Last modified 2022-08-21 18:34:19.529749153
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-18 16:36:58.738904018
 #  File has been updated.
 #  Successfully updated.
 
@@ -310,38 +355,82 @@ purge: clean
 #  recipe to execute (from 'makefile', line 22):
 	-rm -f game
 
+messages.o: messages.c messages.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 16):
+	gcc -c messages.c $(CFLAGS)
+
 # Not a target:
-main.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-16 19:10:28.026875969
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 19):
+	-rm -f *~ *.o
+	
+
+game: main.o messages.o game.o
+#  Implicit rule search has not been done.
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
+#  recipe to execute (from 'makefile', line 7):
+	gcc -o game main.o messages.o game.o $(CFLAGS) $(LDFLAGS)
+
+game.o: game.c game.h
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := game.o
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := game.c game.h
+# automatic
+# | := 
+# automatic
+# < := game.c
+# automatic
+# ^ := game.c game.h
+# automatic
+# ? := game.c game.h
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/12=8%
+#  recipe to execute (from 'makefile', line 13):
+	gcc -c game.c $(CFLAGS)
 
 main.o: main.c messages.h game.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-16 19:12:15.627325023
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
 #  recipe to execute (from 'makefile', line 10):
 	gcc -c main.c -o main.o $(CFLAGS)
 
 # Not a target:
-makefile:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-16 19:05:21.21444693
-#  File has been updated.
-#  Successfully updated.
-
-game.o: game.c game.h
+messages.c:
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-16 19:05:40.556347897
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 13):
-	gcc -c game.c $(CFLAGS)
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=15/1024=1%, Rehash=0, Collisions=0/42=0%
+# Load=15/1024=1%, Rehash=0, Collisions=1/43=2%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
@@ -351,9 +440,9 @@ game.o: game.c game.h
 # strcache buffers: 1 (0) / strings = 23 / storage = 188 B / avg = 8 B
 # current buf: size = 8162 B / used = 188 B / count = 23 / avg = 8 B
 
-# strcache performance: lookups = 51 / hit rate = 54%
+# strcache performance: lookups = 48 / hit rate = 52%
 # hash-table stats:
-# Load=23/8192=0%, Rehash=0, Collisions=0/51=0%
-# Finished Make data base on Wed Aug 17 23:49:01 2022
+# Load=23/8192=0%, Rehash=0, Collisions=1/48=2%
+# Finished Make data base on Sun Aug 21 18:35:09 2022
 
  
