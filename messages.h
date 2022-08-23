@@ -51,22 +51,37 @@ typedef struct message_t
 } message_t;
 
 /***** Funções *****/
+
+/*Função cria um objeto com as configurações necessário para o player acessar a rede*/
 game_socket_t* create_game_socket (int myPort, int nxtPort);
-
-message_t *receiveMessage(game_socket_t *g_socket);
-
-int sendMessage(game_socket_t *g_socket, message_t *msg);
-
-message_t *sendAndWait(game_socket_t *g_socket, message_t *msg);
 
 int getPort(int id);
 
+/***** MENSAGENS ******/
+/*Função para cria uma nova mensagem com origem e tipo definidos
+   demais campos são iniciados com o valor default 0*/
 message_t* create_message (int origin, char type);
 
+/*Espera receber uma mensagem pelo socket, enquanto o programa não
+   receber nada ficará travado nessa função.
+   Retorna a mensagem corretamente formatada*/
+message_t *receiveMessage(game_socket_t *g_socket);
+
+/*Envia uma mensagem para o próximo player na rede*/
+int sendMessage(game_socket_t *g_socket, message_t *msg);
+
+/*Combinação da função sendMessage e receiveMessage
+  Envia mensagem e só saí quando obter a resposta */
+message_t *sendAndWait(game_socket_t *g_socket, message_t *msg);
+
+/***** BASTÃO ******/
+/*Passa o bastão para o próximo jogador*/
 void passBaton(game_socket_t *g_socket, int playerId);
 
+/*Recebe o bastão ou simplesmente repassa a mensagem para a rede*/
 void receiveBaton(game_socket_t *g_socket, message_t *msg);
 
+/*Retorna 1 se tiver o bastão 0 caso contrário*/
 int myMove (game_socket_t *g_socket);
 
 #endif

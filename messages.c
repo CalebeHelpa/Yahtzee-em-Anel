@@ -19,7 +19,6 @@ int convertMsgToStr(message_t *msg, char *buffer){
     str_append(buffer, &size, msg->origin + '0');
     str_append(buffer, &size, msg->player + '0');
 
-    // TODO: Alterar para ter tamanho fixo
     str_append(buffer, &size, msg->bet_type + '0');
     str_append(buffer, &size, msg->bet + '0');
     str_append(buffer, &size, msg->result + '0');
@@ -63,6 +62,7 @@ message_t *convertStrToMsg(char *buffer, int size){
     char error_rcv = buffer[size-1];
     if(error_rcv != erro){
         perror("Dados devem estar incorretos\n");
+        return NULL;
     }
 
     return msg;
@@ -159,7 +159,6 @@ void receiveBaton(game_socket_t *g_socket, message_t *msg){
 
 
 /*********** SOCKET ***********/
-
 game_socket_t* create_game_socket (int myPort, int nxtPort){
     
     game_socket_t* g_socket = malloc(sizeof(game_socket_t));

@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Aug 22 16:12:06 2022
+# Make data base, printed on Mon Aug 22 23:25:31 2022
 
 # Variables
 
@@ -239,7 +239,7 @@ GDMSESSION = gnome
 
 game: main.o messages.o game.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-18 00:16:45.33489838
+#  Last modified 2022-08-22 23:11:56.23508551
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -271,14 +271,15 @@ clean:
 # Not a target:
 game.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-22 16:11:36.999992986
+#  Last modified 2022-08-22 22:26:01.709127655
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 game.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-22 16:11:36.999992986
+#  Last modified 2022-08-22 23:01:10.478662172
+ 
 #  File has been updated.
 #  Successfully updated.
 
@@ -300,8 +301,7 @@ all: game
 # Not a target:
 messages.h:
 #  Implicit rule search has been done.
- 
-#  Last modified 2022-08-18 00:11:31.535808574
+#  Last modified 2022-08-22 20:24:45.491937257
 #  File has been updated.
 #  Successfully updated.
 
@@ -315,17 +315,34 @@ purge: clean
 # Not a target:
 main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-22 16:11:37.000993055
+#  Last modified 2022-08-22 23:19:42.362530217
 #  File has been updated.
 #  Successfully updated.
 
 main.o: main.c messages.h game.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-18 00:16:45.27089877
+#  Implicit/static pattern stem: ''
+#  Last modified 2022-08-22 23:11:56.197085718
 #  File has been updated.
 #  Needs to be updated (-q is set).
+# automatic
+# @ := main.o
+# automatic
+# * := 
+# automatic
+# < := main.c
+# automatic
+# + := main.c messages.h game.o
+# automatic
+# % := 
+# automatic
+# ^ := main.c messages.h game.o
+# automatic
+# ? := main.c
+# automatic
+# | := 
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
+# Load=8/32=25%, Rehash=0, Collisions=1/12=8%
 #  recipe to execute (from 'makefile', line 10):
 	gcc -c main.c -o main.o $(CFLAGS)
 
@@ -344,28 +361,9 @@ makefile:
 
 game.o: game.c game.h
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
-#  Last modified 2022-08-16 19:05:40.556347897
+#  Last modified 2022-08-22 23:01:19.800610002
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := game.o
-# automatic
-# * := 
-# automatic
-# < := game.c
-# automatic
-# + := game.c game.h
-# automatic
-# % := 
-# automatic
-# ^ := game.c game.h
-# automatic
-# ? := game.c game.h
-# automatic
-# | := 
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/12=8%
+#  Successfully updated.
 #  recipe to execute (from 'makefile', line 13):
 	gcc -c game.c $(CFLAGS)
 
@@ -383,6 +381,6 @@ game.o: game.c game.h
 # strcache performance: lookups = 52 / hit rate = 55%
 # hash-table stats:
 # Load=23/8192=0%, Rehash=0, Collisions=0/52=0%
-# Finished Make data base on Mon Aug 22 16:12:06 2022
+# Finished Make data base on Mon Aug 22 23:25:31 2022
 
  
