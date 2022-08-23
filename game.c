@@ -332,10 +332,13 @@ int make_play(player_t *player){
     while(numPlays < 3 && playerStop == 0){
         throw_dices(dices);
         freeze_dices(dices);
-        fprintf(stdout, "Se deseja jogar os dados novamente pressione 1, senao pressione 0\n");
+        fprintf(stdout, "Se deseja jogar os dados novamente pressione 0, senao pressione 1\n");
         scanf("%d", &playerStop);
+        fprintf(stdout, "playerStop> %d\n", playerStop);
         numPlays++;
     }
+
+    fprintf(stdout, "saiu\n");
 
     return define_result(player, dices);
 }

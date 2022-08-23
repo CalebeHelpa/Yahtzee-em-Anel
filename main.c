@@ -7,16 +7,6 @@
 #include "messages.h"
 #include "game.h"
 
-// Remover
-void printMessage(message_t *msg){
-    printf("Origin: %d", msg->origin);
-    printf("\nPlayer: %d", msg->player);
-    printf("\nType: %c", msg->type);
-    printf("\nBet type: %d", msg->bet_type);
-    printf("\nBet : %d", msg->bet);
-    printf("\nResult : %d\n", msg->result);
-}
-
 /******** FUNÇÕES CONTROLE ********/
 /* Le as opções passadas para o programa */
 int read_options(int argc, char ** argv);
@@ -105,7 +95,7 @@ int main(int argc, char ** argv) {
           sendPlay(&player, g_socket, betType, bet, player_biggest_bet, &result);
 
           // Atualiza o vetor de valores
-          // TODO: updateChips(player);
+          player.playersChips[player_biggest_bet] = result;
 
           // Envia saldo atualizado
           sendNewChips(&player, g_socket, player_biggest_bet);
@@ -157,8 +147,7 @@ void pressToStart(){
   printf("\nPressione \"s\" para iniciar...\n");
   char start;
   do{
-    start = getc(stdin);
-    getc(stdin);
+    scanf("%c", &start);
   }while (start != 's');
 }
 
@@ -264,7 +253,7 @@ void sendNewChips(player_t *player, game_socket_t *g_socket, int playerBet){
 
 void receiveNewChips(player_t *player, game_socket_t *g_socket){
   // Espera o saldo novo
-  message_t *msg_update = receiveMessage(g_socket);
+  message_t *msg_update;
   do {
     msg_update = receiveMessage(g_socket);
   } while (msg_update->type != TYPE_CHIPS);
