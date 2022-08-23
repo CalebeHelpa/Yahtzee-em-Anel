@@ -52,12 +52,11 @@ void define_betType(player_t *player){
     fprintf(stdout, "Quinteto -------------------------- 8\n");
 
 
-    int type = getc(stdin) - 48;
-    getc(stdin);        // Remove new line do buffer de entrada
+    int type;
+    scanf("%d", &type);
     while(type < 1 || type > 8){
         fprintf(stdout, "Selecione uma entrada valida!\n");
-        type = getc(stdin) - 48;
-        getc(stdin);    // Remove new line do buffer de entrada
+        scanf("%d", &type);
     }
     
     player->betType = type;
@@ -110,17 +109,16 @@ void throw_dices(int dices[2][NUMDICES]){
 }
 
 void freeze_dices(int dices[2][NUMDICES]){
-    fprintf(stdout, "Insira uma sequencia de zeros e uns, sem espaços, para os dados que deseja bloquear, respectivamente\n");
+    fprintf(stdout, "Insira uma sequencia de zeros e uns, separados por enter, para os dados que deseja bloquear, respectivamente\n");
     fprintf(stdout, "(Um para bloquear, zero para rolar novamente)\n");
     fprintf(stdout, ">>> Atencao! Uma vez o dado bloqueado ele nao pode ser desbloqueado!\n");
 
-    int buff;
+    int buff = 0;
     for(int i = 0; i < NUMDICES; i++){
-        buff = getc(stdin) - 48;
+        scanf("%d", &buff);
         if(dices[0][i] == 0)
             dices[0][i] = buff;
     }
-    getc(stdin);
 
     show_bloqDices(dices);
 
