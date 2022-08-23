@@ -161,11 +161,10 @@ int check_par(player_t *player, int dices[2][NUMDICES]){
         i++;
         j++;
     }
-    if(!find)
-        return 0;
-    
-    player->playersChips[player->playerID] += RECPAR;
-    return 1;
+    if(find)
+        player->playersChips[player->playerID] += RECPAR;
+        
+    return player->playersChips[player->playerID];
 }
 
 int check_trio(player_t *player, int dices[2][NUMDICES]){
@@ -180,11 +179,10 @@ int check_trio(player_t *player, int dices[2][NUMDICES]){
         j++;
         k++;
     }
-    if(!find)
-        return 0;
-    
-    player->playersChips[player->playerID] += RECTRIO;
-    return 1;
+    if(find)
+        player->playersChips[player->playerID] += RECTRIO;
+        
+    return player->playersChips[player->playerID];
 }
 
 int check_doispares(player_t *player, int dices[2][NUMDICES]){
@@ -201,11 +199,10 @@ int check_doispares(player_t *player, int dices[2][NUMDICES]){
         k++;
         l++;
     }
-    if(!find)
-        return 0;
-    
-    player->playersChips[player->playerID] += RECDOISPARES;
-    return 1;
+    if(find)
+        player->playersChips[player->playerID] += RECDOISPARES;
+        
+    return player->playersChips[player->playerID];
 }
 
 int check_fullhouse(player_t *player, int dices[2][NUMDICES]){
@@ -221,11 +218,10 @@ int check_fullhouse(player_t *player, int dices[2][NUMDICES]){
     else if ((dices[1][l] == dices[1][m]) && ((dices[1][i] == dices[1][j]) && (dices[1][j] == dices[1][k])))
         find = 1;
 
-    if(!find)
-        return 0;
-    
-    player->playersChips[player->playerID] += RECFULLHOUSE;
-    return 1;
+    if(find)
+        player->playersChips[player->playerID] += RECFULLHOUSE;
+        
+    return player->playersChips[player->playerID];
 }
 
 int check_seqbaixa(player_t *player, int dices[2][NUMDICES]){
@@ -233,11 +229,10 @@ int check_seqbaixa(player_t *player, int dices[2][NUMDICES]){
     if((dices[1][0] == 1) && (dices[1][1] == 2) && (dices[1][2] == 3) && (dices[1][3] == 4) && (dices[1][4] == 5))
         find = 1;
 
-    if(!find)
-        return 0;
-    
-    player->playersChips[player->playerID] += RECSEQBAIXA;
-    return 1;
+    if(find)
+        player->playersChips[player->playerID] += RECSEQBAIXA;
+        
+    return player->playersChips[player->playerID];
 }
 
 int check_seqalta(player_t *player, int dices[2][NUMDICES]){
@@ -245,11 +240,10 @@ int check_seqalta(player_t *player, int dices[2][NUMDICES]){
     if((dices[1][0] == 2) && (dices[1][1] == 3) && (dices[1][2] == 4) && (dices[1][3] == 5) && (dices[1][4] == 6))
         find = 1;
 
-    if(!find)
-        return 0;
-    
-    player->playersChips[player->playerID] += RECSEQALTA;
-    return 1;
+    if(find)
+        player->playersChips[player->playerID] += RECSEQALTA;
+        
+    return player->playersChips[player->playerID];
 }
 
 int check_quadra(player_t *player, int dices[2][NUMDICES]){
@@ -266,11 +260,10 @@ int check_quadra(player_t *player, int dices[2][NUMDICES]){
         k++;
         l++;
     }
-    if(!find)
-        return 0;
-    
-    player->playersChips[player->playerID] += RECQUADRA;
-    return 1;
+    if(find)
+        player->playersChips[player->playerID] += RECQUADRA;
+        
+    return player->playersChips[player->playerID];
 }
 
 int check_quinteto(player_t *player, int dices[2][NUMDICES]){
@@ -289,11 +282,10 @@ int check_quinteto(player_t *player, int dices[2][NUMDICES]){
         l++;
         m++;
     }
-    if(!find)
-        return 0;
-    
-    player->playersChips[player->playerID] += RECQUINTETO;
-    return 1;
+    if(find)
+        player->playersChips[player->playerID] += RECQUINTETO;
+
+    return player->playersChips[player->playerID];
 }
 
 int define_result(player_t *player, int dices[2][NUMDICES]){
@@ -336,10 +328,8 @@ int make_play(player_t *player){
 
     int numPlays = 0;
     int playerStop = 0;
-    fprintf(stdout, "*\n");
 
     while(numPlays < 3 && playerStop == 0){
-        fprintf(stdout, "*\n");
         throw_dices(dices);
         freeze_dices(dices);
         fprintf(stdout, "Se deseja jogar os dados novamente pressione 1, senao pressione 0\n");
@@ -348,4 +338,12 @@ int make_play(player_t *player){
     }
 
     return define_result(player, dices);
+}
+
+// Retorna 1 caso seja o final do jogo e 0 caso contrario
+int end_game(player_t *player){
+    for(int i = 0; i < TOTALPLAYERS; i++)
+        if(player->playersChips[i] <= 0)
+            return 1;
+    return 0;
 }

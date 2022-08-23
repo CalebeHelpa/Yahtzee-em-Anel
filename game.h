@@ -50,4 +50,6 @@ int define_betValue(player_t *player, int betType, int betValue); // Retorna 1 c
 
 int make_play(player_t *player); // Retorna 1 em caso de sucesso e 0 em caso de falha
 
+int end_game(player_t *player); // Retorna 1 caso seja o final dojogo e 0 caso contrario
+
 #endif
