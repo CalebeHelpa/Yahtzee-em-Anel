@@ -68,7 +68,9 @@ int main(int argc, char ** argv) {
   game_socket_t *g_socket;
   g_socket = create_game_socket(getPort(player.playerID), getPort(player.nxtPlayerID));
 
-  pressToStart();
+  if(myMove(g_socket)){
+    pressToStart();
+  }
 
   // Inicia jogo 
   while(1){
@@ -156,7 +158,8 @@ void pressToStart(){
   char start;
   do{
     start = getc(stdin);
-  }while (start != 'c');
+    getc(stdin);
+  }while (start != 's');
 }
 
 void sendConf(player_t *player, game_socket_t *g_socket, int type){
