@@ -16,7 +16,8 @@ int convertMsgToStr(message_t *msg, char *buffer){
  
     str_append(buffer, &size, START_MARKER);
     str_append(buffer, &size, msg->type);
-    str_append(buffer, &size, msg->origin);
+    str_append(buffer, &size, msg->origin + '0');
+    str_append(buffer, &size, msg->player + '0');
 
     // TODO: Alterar para ter tamanho fixo
     str_append(buffer, &size, msg->bet_type + '0');
@@ -35,13 +36,6 @@ int convertMsgToStr(message_t *msg, char *buffer){
 }
 
 message_t *convertStrToMsg(char *buffer, int size){
-    printf("Recebido: %d\n", size);
-
-    for(int i = 0; i < size; i++){
-        printf("%d |", buffer[i]);
-    }
-    printf("\n");
-
     char marker = buffer[0];
     if(marker != START_MARKER){
         perror("Marcador inicial não corresponde!\n");
@@ -55,10 +49,11 @@ message_t *convertStrToMsg(char *buffer, int size){
     }
 
     msg->origin = (int) buffer[2] - 48;
+    msg->player = (int) buffer[3] - 48;
 
-    msg->bet_type = (int) buffer[3] - 48;
-    msg->bet = (int) buffer[4] - 48;
-    msg->result = (int) buffer[5] - 48;
+    msg->bet_type = (int) buffer[4] - 48;
+    msg->bet = (int) buffer[5] - 48;
+    msg->result = (int) buffer[6] - 48;
 
     char erro = '0';
     for(int i = 3; i < (size-1); i++){
@@ -96,22 +91,48 @@ int sendMessage(game_socket_t *g_socket, message_t *msg){
         return -1;
     }
 
-    for(int i = 0; i < size; i++){
-        printf("%d |", buffer[i]);
-    }
-    printf("\n");
-
-    printf("Enviando: %d\n", size);
-    fflush(stdout);
     // Envia mensagem
     sendto(g_socket->sockfd, (const char *)buffer, size, MSG_CONFIRM, (const struct sockaddr *) &(g_socket->nextaddr), sizeof(g_socket->nextaddr));
     return 1;
 }
 
+message_t* create_message (int origin, char type) {
+    message_t* msg = malloc(sizeof(message_t));
+    if(!msg){
+        perror("Não foi possível alocar a mensagem !\n");
+        return NULL;
+    }
+
+    // Inicia campo
+    msg->origin = origin;
+    msg->type = type;
+
+    // Inicia demais campos com valor padrao
+    msg->player = 0;
+    msg->bet = 0;
+    msg->bet_type = 0;
+    msg->result = 0;
+    return msg;
+}
+
+message_t *sendAndWait(game_socket_t *g_socket, message_t *msg){
+    int result = sendMessage(g_socket, msg);
+    if(result < 0){
+        return NULL;
+    }
+
+    return receiveMessage(g_socket);
+}
+
 /*********** BASTAO ***********/
-void passBaton(game_socket_t *g_socket){
+int myMove (game_socket_t *g_socket){
+    return g_socket->baton == 1;
+}
+
+
+void passBaton(game_socket_t *g_socket, int playerId){
     // Envia mensagem para o próximo com o bastão
-    message_t *msg = create_message(g_socket->myPort, TYPE_BATON);
+    message_t *msg = create_message(playerId, TYPE_BATON); // TODO: Trocar pelo player id
     msg->result = 0;
     sendMessage(g_socket, msg);
 
@@ -136,18 +157,6 @@ void receiveBaton(game_socket_t *g_socket, message_t *msg){
     sendMessage(g_socket, msg);
 }
 
-message_t* create_message (int origin, char type) {
-    message_t* msg = malloc(sizeof(message_t));
-    if(!msg){
-        perror("Não foi possível alocar a mensagem !\n");
-        return NULL;
-    }
-
-    msg->origin = origin;
-    msg->type = type;
-
-    return msg;
-}
 
 /*********** SOCKET ***********/
 

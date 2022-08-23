@@ -7,8 +7,8 @@ Mensagens:
 Sequencialização > 
 Detecção de erros > Paridade horizontal
 
-Marcador inicial | Tipo | Origem | Tipo Aposta | Aposta | Resultado | Erros |
-  1byte            1byte    1byte                                        1byte
+Marcador inicial | Tipo | Origem | Player | Tipo Aposta | Maior aposta | Resultado | Erros |
+  1byte            1byte  1byte    1byte                                           1byte
 
 -> A -> B -> C -> D ->
   
@@ -17,6 +17,7 @@ Tipo:
   -> Bastão
   -> Aposta
   -> Jogada
+  -> Atualizacao saldo
   
  TODO:
   - Mandar / Receber a mensagem

@@ -33,14 +33,16 @@ typedef struct game_socket_t
 #define START_MARKER 0xA
 
 // Tipo: 1 byte
-#define TYPE_CONF  'c'
-#define TYPE_BATON 's'
-#define TYPE_BET   'b'
-#define TYPE_PLAY  'p'
+#define TYPE_CONF   'c'
+#define TYPE_BATON  's'
+#define TYPE_BET    'b'
+#define TYPE_PLAY   'p'
+#define TYPE_CHIPS  'r'
 
 typedef struct message_t
 {
     int origin;
+    int player;
     char type;
 
     int bet_type;
@@ -55,12 +57,16 @@ message_t *receiveMessage(game_socket_t *g_socket);
 
 int sendMessage(game_socket_t *g_socket, message_t *msg);
 
+message_t *sendAndWait(game_socket_t *g_socket, message_t *msg);
+
 int getPort(int id);
 
 message_t* create_message (int origin, char type);
 
-void passBaton(game_socket_t *g_socket);
+void passBaton(game_socket_t *g_socket, int playerId);
 
 void receiveBaton(game_socket_t *g_socket, message_t *msg);
+
+int myMove (game_socket_t *g_socket);
 
 #endif
