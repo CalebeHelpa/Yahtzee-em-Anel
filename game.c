@@ -41,6 +41,7 @@ void initialize_player(player_t *player, int playerId){
 
 void define_betType(player_t *player){
 
+    fprintf(stdout, "----------------------INICIO-DA-RODADA-----------------------\n");
     fprintf(stdout, "Defina o tipo de aposta selecionando o numero correspondente:\n");
     fprintf(stdout, "Um par ---------------------------- 1\n");
     fprintf(stdout, "Um trio --------------------------- 2\n");
@@ -101,7 +102,7 @@ void show_dices(int dices[2][NUMDICES]){
 
 void throw_dices(int dices[2][NUMDICES]){
     fprintf(stdout, "\nJogando os dados...\n");
-    system("sleep 03"); // pausa de 3 segundos
+    system("sleep 02"); // pausa de 2 segundos
     srand(time(NULL));
     for(int i = 0; i < NUMDICES; i++)
         if(dices[0][i] == 0)
@@ -334,8 +335,10 @@ int make_play(player_t *player){
     while(numPlays >= 0 && playerStop == 0){
         throw_dices(dices);
         freeze_dices(dices);
-        fprintf(stdout, "Voce possui mais %d jogadas\nSe deseja jogar os dados novamente pressione 0, senao pressione 1\n", numPlays);
-        scanf("%d", &playerStop);
+        if(numPlays > 0){
+            fprintf(stdout, "Voce possui mais %d jogadas\nSe deseja jogar os dados novamente pressione 0, senao pressione 1\n", numPlays);
+            scanf("%d", &playerStop);
+        }
         numPlays--;
     }
 
@@ -346,6 +349,7 @@ int make_play(player_t *player){
         fprintf(stdout, "\nQue pena! Voce perdeu :(\n");
     
     fprintf(stdout, "Agora voce possui %d fichas\n", chipsPost);
+    fprintf(stdout, "\n------------------------FIM-DA-RODADA------------------------\n");
     return chipsPost;
 }
 
