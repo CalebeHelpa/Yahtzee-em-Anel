@@ -100,7 +100,8 @@ void show_dices(int dices[2][NUMDICES]){
 }
 
 void throw_dices(int dices[2][NUMDICES]){
-    fprintf(stdout, "Jogando os dados...\n");
+    fprintf(stdout, "\nJogando os dados...\n");
+    system("sleep 03"); // pausa de 3 segundos
     srand(time(NULL));
     for(int i = 0; i < NUMDICES; i++)
         if(dices[0][i] == 0)
@@ -109,9 +110,9 @@ void throw_dices(int dices[2][NUMDICES]){
 }
 
 void freeze_dices(int dices[2][NUMDICES]){
-    fprintf(stdout, "Insira uma sequencia de zeros e uns, separados por enter, para os dados que deseja bloquear, respectivamente\n");
+    fprintf(stdout, "\nInsira uma sequencia de zeros e uns separados por enter para os dados que deseja bloquear, respectivamente\n");
     fprintf(stdout, "(Um para bloquear, zero para rolar novamente)\n");
-    fprintf(stdout, ">>> Atencao! Uma vez o dado bloqueado ele nao pode ser desbloqueado!\n");
+    fprintf(stdout, "Atencao! Uma vez o dado bloqueado ele nao pode ser desbloqueado!\n");
 
     int buff = 0;
     for(int i = 0; i < NUMDICES; i++){
@@ -314,8 +315,9 @@ int define_result(player_t *player, int dices[2][NUMDICES]){
 }
 
 int make_play(player_t *player){
-    
-    fprintf(stdout, "Pressione qualquer tecla para jogar os dados\n");
+
+    int chipsPrev, chipsPost;
+    chipsPrev = player->playersChips[player->playerID]; 
 
     player->playersChips[player->playerID] -= player->betValue;
 
@@ -323,24 +325,28 @@ int make_play(player_t *player){
     for(int i = 0; i < NUMDICES; i++){
         dices[0][i] = 0;
         dices[1][i] = 0;
-        fprintf(stdout, "%d\n", i);
     }
 
-    int numPlays = 0;
-    int playerStop = 0;
+    fprintf(stdout, "\nSua aposta foi a mais alta!\n");
 
-    while(numPlays < 3 && playerStop == 0){
+    int numPlays = 2;
+    int playerStop = 0;
+    while(numPlays >= 0 && playerStop == 0){
         throw_dices(dices);
         freeze_dices(dices);
-        fprintf(stdout, "Se deseja jogar os dados novamente pressione 0, senao pressione 1\n");
+        fprintf(stdout, "Voce possui mais %d jogadas\nSe deseja jogar os dados novamente pressione 0, senao pressione 1\n", numPlays);
         scanf("%d", &playerStop);
-        fprintf(stdout, "playerStop> %d\n", playerStop);
-        numPlays++;
+        numPlays--;
     }
 
-    fprintf(stdout, "saiu\n");
-
-    return define_result(player, dices);
+    chipsPost = define_result(player, dices);
+    if(chipsPost > chipsPrev)
+        fprintf(stdout, "\nPARABENS, VOCE GANHOU!\n");
+    else
+        fprintf(stdout, "\nQue pena! Voce perdeu :(\n");
+    
+    fprintf(stdout, "Agora voce possui %d fichas\n", chipsPost);
+    return chipsPost;
 }
 
 // Retorna 1 caso seja o final do jogo e 0 caso contrario
