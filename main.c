@@ -66,10 +66,9 @@ int main(int argc, char ** argv) {
   while(1){
       int isMyMove = myMove(g_socket);
 
-      /* TODO: Adicionar endGame
       if(isMyMove){
         // Verificar se o jogo acabou
-        if(endGame()) {
+        if(end_game(&player)) {
           sendConf(&player, g_socket, -1);
           printf("\nFim de jogo\n");
           break;
@@ -83,7 +82,6 @@ int main(int argc, char ** argv) {
           break;
         } 
       }
-      */
 
       // Game
       int betType, bet, player_biggest_bet, result;
