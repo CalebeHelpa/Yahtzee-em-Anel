@@ -68,7 +68,7 @@ int main(int argc, char ** argv) {
   game_socket_t *g_socket;
   g_socket = create_game_socket(getPort(player.playerID), getPort(player.nxtPlayerID));
 
-  // TODO: Mensagem para sincronizar enquanto abre (Pressiona s para iniciar o jogo)
+  pressToStart();
 
   // Inicia jogo 
   while(1){
@@ -151,7 +151,7 @@ int read_options(int argc, char ** argv){
 }
 
 void pressToStart(){
-  printf(" BEM VINDO AO YAHTZEE-EM-ANEL \n");
+  printf("BEM VINDO AO YAHTZEE-EM-ANEL \n");
   printf("\nPressione \"s\" para iniciar...\n");
   char start;
   do{
