@@ -30,7 +30,7 @@ void initialize_player(player_t *player, int playerId){
     player->playerID = playerId;
     player->nxtPlayerID = playerId == (TOTALPLAYERS-1) ? 0 : playerId + 1;
 
-    for(int i = 0; i <= (TOTALPLAYERS-1); i++)
+    for(int i = 0; i < TOTALPLAYERS; i++)
         player->playersChips[i] = INITCHIPS;
     
     player->betType = NULO;
@@ -85,7 +85,7 @@ int define_betValue(player_t *player, int betType, int betValue){
     return 1;
 }
 
-void show_bloqDices(int dices[1][NUMDICES-1]){
+void show_bloqDices(int dices[2][NUMDICES]){
     fprintf(stdout, "Os dados bloqueados sao:\n");
     for(int i = 0; i < NUMDICES; i++)
         if(dices[0][i] == 1)
@@ -93,14 +93,14 @@ void show_bloqDices(int dices[1][NUMDICES-1]){
     fprintf(stdout, "\n");
 }
 
-void show_dices(int dices[1][NUMDICES-1]){
+void show_dices(int dices[2][NUMDICES]){
     fprintf(stdout, "Os resultados sao:\n");
     for(int i = 0; i < NUMDICES; i++)
         fprintf(stdout, "%d ", dices[1][i]);
     fprintf(stdout, "\n");
 }
 
-void throw_dices(int dices[1][NUMDICES-1]){
+void throw_dices(int dices[2][NUMDICES]){
     fprintf(stdout, "Jogando os dados...\n");
     srand(time(NULL));
     for(int i = 0; i < NUMDICES; i++)
@@ -109,7 +109,7 @@ void throw_dices(int dices[1][NUMDICES-1]){
     show_dices(dices);
 }
 
-void freeze_dices(int dices[1][NUMDICES-1]){
+void freeze_dices(int dices[2][NUMDICES]){
     fprintf(stdout, "Insira uma sequencia de zeros e uns, sem espaços, para os dados que deseja bloquear, respectivamente\n");
     fprintf(stdout, "(Um para bloquear, zero para rolar novamente)\n");
     fprintf(stdout, ">>> Atencao! Uma vez o dado bloqueado ele nao pode ser desbloqueado!\n");
@@ -153,7 +153,7 @@ void selectionSort(int arr[], int n)
     }
 }
 
-int check_par(player_t *player, int dices[1][NUMDICES-1]){
+int check_par(player_t *player, int dices[2][NUMDICES]){
     int i = 0;
     int j = 1;
     int find = 0;
@@ -170,7 +170,7 @@ int check_par(player_t *player, int dices[1][NUMDICES-1]){
     return 1;
 }
 
-int check_trio(player_t *player, int dices[1][NUMDICES-1]){
+int check_trio(player_t *player, int dices[2][NUMDICES]){
     int i = 0;
     int j = 1;
     int k = 2;
@@ -189,7 +189,7 @@ int check_trio(player_t *player, int dices[1][NUMDICES-1]){
     return 1;
 }
 
-int check_doispares(player_t *player, int dices[1][NUMDICES-1]){
+int check_doispares(player_t *player, int dices[2][NUMDICES]){
     int i = 0;
     int j = 1;
     int k = 2;
@@ -210,7 +210,7 @@ int check_doispares(player_t *player, int dices[1][NUMDICES-1]){
     return 1;
 }
 
-int check_fullhouse(player_t *player, int dices[1][NUMDICES-1]){
+int check_fullhouse(player_t *player, int dices[2][NUMDICES]){
     int i = 0;
     int j = 1;
     int k = 2;
@@ -230,7 +230,7 @@ int check_fullhouse(player_t *player, int dices[1][NUMDICES-1]){
     return 1;
 }
 
-int check_seqbaixa(player_t *player, int dices[1][NUMDICES-1]){
+int check_seqbaixa(player_t *player, int dices[2][NUMDICES]){
     int find = 0;
     if((dices[1][0] == 1) && (dices[1][1] == 2) && (dices[1][2] == 3) && (dices[1][3] == 4) && (dices[1][4] == 5))
         find = 1;
@@ -242,7 +242,7 @@ int check_seqbaixa(player_t *player, int dices[1][NUMDICES-1]){
     return 1;
 }
 
-int check_seqalta(player_t *player, int dices[1][NUMDICES-1]){
+int check_seqalta(player_t *player, int dices[2][NUMDICES]){
     int find = 0;
     if((dices[1][0] == 2) && (dices[1][1] == 3) && (dices[1][2] == 4) && (dices[1][3] == 5) && (dices[1][4] == 6))
         find = 1;
@@ -254,7 +254,7 @@ int check_seqalta(player_t *player, int dices[1][NUMDICES-1]){
     return 1;
 }
 
-int check_quadra(player_t *player, int dices[1][NUMDICES-1]){
+int check_quadra(player_t *player, int dices[2][NUMDICES]){
     int i = 0;
     int j = 1;
     int k = 2;
@@ -275,7 +275,7 @@ int check_quadra(player_t *player, int dices[1][NUMDICES-1]){
     return 1;
 }
 
-int check_quinteto(player_t *player, int dices[1][NUMDICES-1]){
+int check_quinteto(player_t *player, int dices[2][NUMDICES]){
     int i = 0;
     int j = 1;
     int k = 2;
@@ -298,7 +298,7 @@ int check_quinteto(player_t *player, int dices[1][NUMDICES-1]){
     return 1;
 }
 
-int define_result(player_t *player, int dices[1][NUMDICES-1]){
+int define_result(player_t *player, int dices[2][NUMDICES]){
     selectionSort(dices[1], NUMDICES);
     switch(player->betType){
     case PAR:
@@ -326,19 +326,22 @@ int define_result(player_t *player, int dices[1][NUMDICES-1]){
 int make_play(player_t *player){
     
     fprintf(stdout, "Pressione qualquer tecla para jogar os dados\n");
-    getc(stdin);
 
     player->playersChips[player->playerID] -= player->betValue;
 
-    int dices[1][NUMDICES-1];
+    int dices[2][NUMDICES];
     for(int i = 0; i < NUMDICES; i++){
         dices[0][i] = 0;
         dices[1][i] = 0;
+        fprintf(stdout, "%d\n", i);
     }
 
     int numPlays = 0;
     int playerStop = 0;
+    fprintf(stdout, "*\n");
+
     while(numPlays < 3 && playerStop == 0){
+        fprintf(stdout, "*\n");
         throw_dices(dices);
         freeze_dices(dices);
         fprintf(stdout, "Se deseja jogar os dados novamente pressione 1, senao pressione 0\n");

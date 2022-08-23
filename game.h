@@ -33,7 +33,7 @@ typedef struct player_t {
   int playerID;                     // ID do jogador
   int nxtPlayerID;                  // ID do proximo jogador
 
-  int playersChips[TOTALPLAYERS-1]; // Vetor para monitorar fichas dos jogadores atraves do ID 
+  int playersChips[TOTALPLAYERS];   // Vetor para monitorar fichas dos jogadores atraves do ID 
   
   int betType;                      // Tipo da aposta
   int betValue;                     // Valor apostado
