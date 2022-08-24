@@ -80,7 +80,7 @@ int define_betValue(player_t *player, int betType, int betValue){
         return 0;
     }
     else if(value > player->playersChips[player->playerID]){
-        frpintf(stdout, "Atencao! Um jogador nao pode apostar mais fichas do que possui!\n");
+        fprintf(stdout, "Atencao! Um jogador nao pode apostar mais fichas do que possui!\n");
         fprintf(stdout, "Lembre-se disso na proxima rodada.\n");
         fprintf(stdout, "Valor da aposta mantido, passando para o proximo jogador...\n");
         return 0;
