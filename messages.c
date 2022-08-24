@@ -19,7 +19,6 @@ int convertMsgToStr(message_t *msg, char *buffer){
     str_append(buffer, &size, msg->origin + '0');
     str_append(buffer, &size, msg->player + '0');
 
-    // TODO: Alterar para ter tamanho fixo
     str_append(buffer, &size, msg->bet_type + '0');
     str_append(buffer, &size, msg->bet + '0');
     str_append(buffer, &size, msg->result + '0');
@@ -62,10 +61,27 @@ message_t *convertStrToMsg(char *buffer, int size){
 
     char error_rcv = buffer[size-1];
     if(error_rcv != erro){
-        perror("Dados devem estar incorretos\n");
+        printf("Detectamos uma mensagem corrompida !\n");
+        fflush(stdout);
+        return NULL;
     }
 
     return msg;
+}
+
+void trataErro(game_socket_t *g_socket, const char * buffer, int size){
+    // Se tiver o bastão manda mensagem para todos morrerem
+    if(myMove(g_socket)){
+        message_t *msg_conf = create_message(g_socket->myPort, TYPE_CONF);
+        msg_conf->result = -2;
+        message_t *msg_conf_response = sendAndWait(g_socket, msg_conf);
+        exit(1);
+    } else {
+        // Repassa menssagem com erro e espera resposta
+        sendto(g_socket->sockfd, (const char *)buffer, size, MSG_CONFIRM, (const struct sockaddr *) &(g_socket->nextaddr), sizeof(g_socket->nextaddr));
+        printf("Esperando resposta...");
+        receiveMessage(g_socket);
+    }
 }
 
 /*********** MENSAGEM ***********/
@@ -73,6 +89,22 @@ message_t *receiveMessage(game_socket_t *g_socket){
     char buffer[MAXLINE];
     int len = sizeof(g_socket->prevaddr);
     int n = recvfrom(g_socket->sockfd, (char *)buffer, MAXLINE, MSG_WAITALL, ( struct sockaddr *) &(g_socket->prevaddr), &len);
+
+    message_t *msg = convertStrToMsg(buffer, n);
+    if(msg == NULL){
+        trataErro(g_socket, buffer, n);
+    }
+
+    if(msg->type == TYPE_CONF && msg->result == -2){
+        printf("Rapassando erro\n");
+        // Repassa mensagem
+        sendMessage(g_socket, msg);
+        sleep(2);
+
+        // Morre
+        printf("Fim de jogo por erro\n");
+        exit(1);
+    }
 
     return convertStrToMsg(buffer, n);
 }
@@ -159,7 +191,6 @@ void receiveBaton(game_socket_t *g_socket, message_t *msg){
 
 
 /*********** SOCKET ***********/
-
 game_socket_t* create_game_socket (int myPort, int nxtPort){
     
     game_socket_t* g_socket = malloc(sizeof(game_socket_t));
